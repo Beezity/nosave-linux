@@ -14,8 +14,25 @@ First, clone the repository to your local machine:
 ```bash
 git clone https://github.com/Beezity/nosave-linux/
 ```
+### 2. Install required dependencies
+For Fedora/RHEL/Centos:
 
-### 2. Install the Helper Script
+```
+sudo dnf install python3 nftables conntrack-tools git
+```
+
+For Debian/Ubuntu/Linux Mint:
+
+```
+sudo apt install python3 nftables conntrack git
+```
+
+For Arch/CachyOS/Manjaro/Endeavour
+```
+sudo pacman -S python nftables conntrack-tools git
+```
+
+### 3. Install the Helper Script
 This step covers installing and configuring the Python helper script.
 
 Create a new file at `/usr/local/bin/nosave-helper` and paste the following Python code into it:
