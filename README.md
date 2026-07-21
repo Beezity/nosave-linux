@@ -31,21 +31,27 @@ TABLE = "nosave"
 SET = "blocked_ips"
 
 
-def run_nft(*args):
+def run(*args):
     return subprocess.run(
-        [
-            "nft",
-            *args
-        ],
+        list(args),
         capture_output=True,
         text=True,
     )
+
+
+def run_nft(*args):
+    return run("nft", *args)
+
+
+def run_conntrack(*args):
+    return run("conntrack", *args)
 
 
 def enabled():
     """
     Check if the IP already exists in the nftables set.
     """
+
     result = run_nft(
         "list",
         "set",
@@ -60,31 +66,45 @@ def enabled():
     return REMOTE_IP in result.stdout
 
 
+def clear_connections():
+    """
+    Remove any existing conntrack entries for the blocked IP.
+    Safe to call even if none exist.
+    """
+
+    run_conntrack("-D", "-d", REMOTE_IP)
+    run_conntrack("-D", "-s", REMOTE_IP)
+
+
 def enable():
     """
-    Add IP only if it does not exist.
+    Add IP only if it does not exist, then kill existing connections.
     """
-    if enabled():
-        return True
 
-    result = run_nft(
-        "add",
-        "element",
-        "inet",
-        TABLE,
-        SET,
-        "{",
-        REMOTE_IP,
-        "}",
-    )
+    if not enabled():
+        result = run_nft(
+            "add",
+            "element",
+            "inet",
+            TABLE,
+            SET,
+            "{",
+            REMOTE_IP,
+            "}",
+        )
 
-    return result.returncode == 0
+        if result.returncode != 0:
+            return False
+
+    clear_connections()
+    return True
 
 
 def disable():
     """
     Remove IP only if it exists.
     """
+
     if not enabled():
         return True
 
