@@ -27,7 +27,7 @@ For Debian/Ubuntu/Linux Mint:
 sudo apt install python3 nftables conntrack git
 ```
 
-For Arch/CachyOS/Manjaro/Endeavour
+For Arch/CachyOS/Manjaro/Endeavour:
 ```
 sudo pacman -S python nftables conntrack-tools git
 ```
