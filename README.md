@@ -4,6 +4,8 @@ The nosave exploit for **Big Wheely Stealy the 5th**. Super cool game.
 
 This tool mainly targets Linux systems, especially those running Fedora/Niri, but you can easily adapt the script to work more universally.
 
+Note: the files are entirely redundant, you can just skip cloning the repo and instead head straight to step 2 onwards.
+
 ## 🚀 Instructions
 
 ### 1. Clone the Repository
@@ -177,3 +179,5 @@ Once installed and configured, you can use the helper script to enable or disabl
   sudo nosave-helper disable
   ```
 Optionally, you may also bind this to a keybind so that you don't need to manually run the helper everytime via the terminal.
+
+When using the nosave exploit, you have to wait until the yellow spinning wheel is gone, because unlike with tools such as VKit, the timing seems to be far less lenient on Linux/Proton.
