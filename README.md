@@ -150,10 +150,10 @@ Once installed and configured, you can use the helper script to enable or disabl
 
 - **Add the rule to nftables:**
   ```bash
-  /usr/local/bin/nosave-helper enable
+  sudo nosave-helper enable
   ```
 - **Delete the rule from nftables:**
   ```bash
-  /usr/local/bin/nosave-helper disable
+  sudo nosave-helper disable
   ```
 Optionally, you may also bind this to a keybind so that you don't need to manually run the helper everytime via the terminal.
