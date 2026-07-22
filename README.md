@@ -8,9 +8,7 @@ Note: the files are entirely redundant, you can just skip cloning the repo and i
 
 ## 🚀 Instructions
 
-```bash
-git clone https://github.com/Beezity/nosave-linux/
-```
+
 ### 1. Install required dependencies
 For Fedora/RHEL/Centos:
 
@@ -30,6 +28,10 @@ sudo pacman -S python nftables conntrack-tools git
 ```
 ### 1. Clone the Repository
 Then, clone the repository to your local machine:
+
+```bash
+git clone https://github.com/Beezity/nosave-linux/
+```
 
 ### 3. Install the Helper Script
 This step covers installing and configuring the Python helper script.
