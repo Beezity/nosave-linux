@@ -26,7 +26,7 @@ For Arch/CachyOS/Manjaro/Endeavour:
 ```
 sudo pacman -S python nftables conntrack-tools git
 ```
-### 1. Clone the Repository
+### 2. Clone the Repository
 Then, clone the repository to your local machine:
 
 ```bash
