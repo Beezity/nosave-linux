@@ -4,7 +4,7 @@ The nosave exploit for **Big Wheely Stealy the 5th**. Super cool game.
 
 This tool mainly targets Linux systems, especially those running Fedora/Niri, but you can easily adapt the script to work more universally.
 
-Note: the files are entirely redundant, you can just skip cloning the repo and instead head straight to step 2 onwards.
+Note: the files are entirely redundant, you can just skip cloning the repo and instead head straight to step 3 onwards.
 
 ## 🚀 Instructions
 
