@@ -32,8 +32,14 @@ Then, clone the repository to your local machine:
 ```bash
 git clone https://github.com/Beezity/nosave-linux/
 ```
+### 3. Add nftables
+This is for the helper to work:
+```
+sudo nft add table inet nosave
+sudo nft add set inet nosave blocked_ips '{ type ipv4_addr; }'
+```
 
-### 3. Install the Helper Script
+### 4. Install the Helper Script
 This step covers installing and configuring the Python helper script.
 
 Create a new file at `/usr/local/bin/nosave-helper` and paste the following Python code into it:
@@ -169,7 +175,7 @@ Next, make the script executable by running:
 sudo chmod 755 /usr/local/bin/nosave-helper
 ```
 
-### 3. Configure Sudoers
+### 5. Configure Sudoers
 To allow the script to modify `nftables` without prompting for a password every time, you need to add a sudoers rule.
 
 Run the following command to create a new sudoers file:
